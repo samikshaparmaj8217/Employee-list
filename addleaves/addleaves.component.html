@@ -1,0 +1,79 @@
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+
+<div class="main-wrapper account-wrapper">
+    <div class="account-page">
+        <div class="account-center">
+            <div class="account-box" style="min-width: 600px;">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <h4 class="page-title">Add Leave</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <form [formGroup]="leave" (ngSubmit)="submit(leave.value)">
+            
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Employee List</label><br>
+                                            <select class="select select2-hidden-accessible form-control" tabindex="1" aria-hidden="true" name="emp_name" formControlName="emp_name"  required>
+                                                <option *ngFor="let e of name; let i = index">{{name[i].emp_name}}</option>
+                                            </select>
+                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Leave Type</label><br>
+                                            <select class="select select2-hidden-accessible form-control" tabindex="1" aria-hidden="true" name="leave_type" formControlName="leave_type" required>
+                                                <option>Casual Leave</option>
+                                                <option>Medical Leave</option>
+                                                <option>Vacation Leave</option>
+                                                <option>Paternity Leave</option>
+                                            </select>
+                                        </div>
+                                    </div> 
+            
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Leave From <span class="text-danger">*</span></label>
+                                            <div>
+                                                <input class="form-control datetimepicker" type="date" name="leave_form" formControlName="leave_form" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Leave To <span class="text-danger">*</span></label>
+                                            <div>
+                                                <input class="form-control datetimepicker" type="date" name="leave_to" formControlName="leave_to" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label>Leave Reason <span class="text-danger">*</span></label>
+                                    <textarea rows="4" cols="5" class="form-control"  name="reason" formControlName="reason" required></textarea>
+                                </div>
+                                <div class="m-t-20 text-center">
+                                    <button class="btn btn-primary submit-btn" type="submit"> Send Leave Request</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-wrapper" >
+    
+
+</div>

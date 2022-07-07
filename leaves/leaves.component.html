@@ -1,0 +1,60 @@
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<div class="page-wrapper" style="min-height: 357px;">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-8 col-6">
+                <h4 class="page-title">Leave Request</h4>
+            </div>
+            <div class="col-sm-4 col-6 text-right m-b-30">
+                <a routerLink="/addleaves" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i>
+                    Add Leave</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped custom-table mb-0 datatable dataTable no-footer"
+                    id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="Employee: activate to sort column ascending" style="width: 144.953px;">
+                                Employee</th>
+                            <th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                colspan="1" aria-label="Leave Type: activate to sort column ascending"
+                                aria-sort="descending" style="width: 92.875px;">Leave Type</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="From: activate to sort column ascending" style="width: 70.8438px;">From</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="To: activate to sort column ascending" style="width: 72.7969px;">To</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                aria-label="Reason: activate to sort column ascending" style="width: 137.406px;">Reason
+                            </th>
+
+
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr *ngFor="let l of leaves;">
+                            <!-- <td class="align-middle">{{ i + 1 }}</td> -->
+                            <td class="align-middle">{{ l.emp_name }}</td>
+                            <td class="align-middle">{{ l.leave_type}}</td>
+                            <td class="align-middle">{{ l.leavefromplay }}</td>
+                            <td class="align-middle">{{ l.leavetoplay }}</td>
+                            <td class="align-middle">{{ l.reason }}</td>
+
+
+
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

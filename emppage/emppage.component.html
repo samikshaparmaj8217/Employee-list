@@ -1,0 +1,65 @@
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-4 col-3">
+                <h4 class="page-title">Employee</h4>
+            </div>
+            <div class="col-sm-8 col-9 text-right m-b-20">
+                <a routerLink="/addemp" class="btn btn-primary float-right btn-rounded"><i class="fa fa-plus"></i> Add
+                    Employee</a>
+            </div>
+        </div>
+        <div class="row filter-row">
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <label class="focus-label">Employee ID</label>
+                    <input type="text" class="form-control floating">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <label class="focus-label">Employee Name</label>
+                    <input type="text" class="form-control floating">
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <a href="#" class="btn btn-success btn-block"> Search </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>Name</th>
+                                <th>Salary</th>
+                                <th>Join Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let e of employees; let i = index">
+                                <td class="align-middle">{{ i + 1 }}</td>
+                                <a routerLink="/profile"><td class="align-middle">{{ e.emp_name }}</td></a>
+                                <td class="align-middle">{{ e.emp_salary }}</td>
+                                <td class="align-middle">{{ e.joiningdatediplay }}</td>
+
+                                <td class="align-middle">
+
+                                    <span class="btn btn-danger" (click)="delete(e.emp_id)">Delete</span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

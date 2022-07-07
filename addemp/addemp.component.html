@@ -1,0 +1,51 @@
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<div class="page-wrapper">
+    <div class="main-wrapper account-wrapper">
+        <div class="account-page">
+			<div class="account-center">
+				<div class="account-box" style="min-width: 500px;">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                <h4 class="page-title">Add Employee</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                <form [formGroup]="employee" (ngSubmit)="submit(employee.value)">
+                    
+                                    <div class="col-sm-6">
+                                        <div class="form-group row center">
+                                            <label>Name <span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" name="emp_name" formControlName="emp_name" style="min-width: 300px;" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group row ">
+                                            <label>Salary </label>
+                                            <input class="form-control" type="number" class="form-control" name="emp_salary"
+                                                formControlName="emp_salary" style="min-width: 300px;" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group row ">
+                                            <label>Joining Date <span class="text-danger">*</span></label>
+                                            <input class="form-control datetimepicker" type="date" name="emp_joining_date"
+                                                formControlName="emp_joining_date" style="min-width: 300px;" required>
+                    
+                                        </div>
+                                    </div>
+                    
+                                    <div class="m-t-20 text-center col-sm-6">
+                                        <button class="btn btn-primary submit-btn" type="submit">Create Employee</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+			</div>
+        </div>
+    </div>
